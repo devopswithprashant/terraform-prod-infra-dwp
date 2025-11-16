@@ -2,7 +2,7 @@ resource "aws_eks_node_group" "my_eks_node_group" {
   cluster_name    = aws_eks_cluster.my_eks_cluster.name
   node_group_name = "private-large"
   node_role_arn   = aws_iam_role.node_group_role.arn
-  subnet_ids      = data.aws_subnets.nonprod_blog_subnets.ids
+  subnet_ids      = data.aws_subnets.prod_blog_subnets.ids
   ami_type        = "AL2023_ARM_64_STANDARD"
   capacity_type   = "ON_DEMAND"
   instance_types  = ["m6g.large"]

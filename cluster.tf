@@ -91,7 +91,7 @@ resource "aws_eks_access_policy_association" "jumpserver_admin" {
 resource "aws_security_group" "eks_additional" {
   name_prefix = "${local.name}-eks-additional-sg"
   description = "Additional security group for EKS cluster - Allow 443 from VPC"
-  vpc_id      = data.aws_vpc.nonprod_blog.id
+  vpc_id      = data.aws_vpc.prod_blog.id
 
   tags = {
     Name = "${local.name}-eks-additional-sg"

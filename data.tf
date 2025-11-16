@@ -10,7 +10,7 @@ data "aws_vpc" "prod_blog" {
 data "aws_subnets" "prod_blog_subnets" {
   filter {
     name   = "vpc-id"
-    values = [data.aws_vpc.nonprod_blog.id]
+    values = [data.aws_vpc.prod_blog.id]
   }
 
   tags = {
@@ -21,7 +21,7 @@ data "aws_subnets" "prod_blog_subnets" {
 data "aws_subnets" "prod_blog_subnets_public" {
   filter {
     name   = "vpc-id"
-    values = [data.aws_vpc.nonprod_blog.id]
+    values = [data.aws_vpc.prod_blog.id]
   }
 
   tags = {
